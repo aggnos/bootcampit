@@ -26,7 +26,10 @@ int main () {
   }
 
   for (int i = 0; i < N; ++i)
-      if(stud[i].godine < min) minIndex = i;
+    if(stud[i].godine < min) {
+      minIndex = i;
+      min = stud[i].godine;
+    }
 
   cout << stud[minIndex].ime << " " << stud[minIndex].prezime << " " << stud[minIndex].godine << endl; 
 
