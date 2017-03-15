@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
   quickSort(polje, 0, n-1);
   cout << "AFTER SORT: \n";
   for(int i = 0; i < n; i++) {
-    cout << polje[i] << endl;
+    cout << polje[i] << " ";
   }
   
   
