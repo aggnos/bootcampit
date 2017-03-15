@@ -38,12 +38,9 @@ int main(int argc, char *argv[])
   for(int i = 0; i < n; i++) {
     cin >> polje[i];
   }
-  for(int i = 0; i < n; i++) {
-    cout << polje[i] << endl;
-  }
 
   quickSort(polje, 0, n-1);
-  cout << "AFTER SORT: \n";
+
   for(int i = 0; i < n; i++) {
     cout << polje[i] << " ";
   }
