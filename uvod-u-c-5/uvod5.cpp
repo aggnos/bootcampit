@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <sstream>
 
 using namespace std;
 //const int MAX = 3;
@@ -13,22 +14,21 @@ struct student
 };
 
 int main () {
-  int N;
+  int N, min = 999, minIndex;
   cin >> N;
 
   vector<student> stud;
 
   for(int i = 0; i < N; i++) {
     stud.push_back(student());
-    cin >> stud[i].ime >> stud[i].prezime >>
-      stud[i].godine >> stud[i].oib >> stud[i].matBroj;
+    cin >> stud[i].ime >> stud[i].prezime >> stud[i].godine >>  stud[i].oib >>  stud[i].matBroj;
+
   }
 
   for (int i = 0; i < N; ++i)
-    {
-      cout << stud[i].ime << " " << stud[i].prezime << " " << 
-	stud[i].godine << " " <<  stud[i].oib << " " <<  stud[i].matBroj << endl;
-    }
+      if(stud[i].godine < min) minIndex = i;
+
+  cout << stud[minIndex].ime << " " << stud[minIndex].prezime << " " << stud[minIndex].godine << endl; 
 
 
   // int  var[MAX] = {10, 100, 200};
