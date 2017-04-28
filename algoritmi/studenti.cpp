@@ -24,7 +24,7 @@ void meni(vector<Student>& studenti) {
   system("CLS");
 
   while(izbor != 0){
-    cout << "1 Unos\n2 Brisanje po ID-u\nIzmjena\n3 Prikaz\n4 Prikaz prosjeka po ispitu\n5 Najbolji\n6 Najgori\n7 Prikaz po ID-u\n8 Sortirano prema uspjehu\n0 Izlaz" << endl;
+    cout << "1 Unos\n2 Brisanje po ID-u\n3 Izmjena\n4 Prikaz\n5 Prikaz prosjeka po ispitu\n6 Najbolji\n7 Najgori\n8 Prikaz po ID-u\n9 Sortirano prema uspjehu\n0 Izlaz" << endl;
     cin >> izbor;
 
     int temp;
@@ -46,11 +46,24 @@ void meni(vector<Student>& studenti) {
       }
       
     }break;
-    case 3: {
+    case 4: {
       vector<Student>::iterator i;
       for (i = studenti.begin(); i != studenti.end();i++){
 	cout << (*i).ime << endl;
       }
+    }
+      break;
+    case 3: {
+      int mijenjaj;
+      cin >> mijenjaj;
+      
+      for (vector<Student>::iterator i = studenti.begin(); i != studenti.end();i++){
+	if( (*i).id == mijenjaj) {
+	  cin >> (*i).ime >> (*i).prezime >> (*i).spol >> (*i).prviKolokvij >> (*i).drugiKolokvij >> (*i).zavrsni;
+	}
+
+      }
+      
     }
       break;
     default: system("PAUSE");
